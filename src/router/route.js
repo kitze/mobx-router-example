@@ -4,18 +4,12 @@ import {mapAndFilter} from './utils';
 
 class Route {
 
-  //props
   id;
   component;
   path;
+  onEnter;
   title;
   rootPath;
-
-  //lifecycle methods
-  onEnter;
-  onExit;
-  beforeEnter;
-  beforeExit;
 
   constructor(props) {
     _.each(props, (value, key) => this[key] = value);

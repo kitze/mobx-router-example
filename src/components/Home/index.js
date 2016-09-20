@@ -50,6 +50,12 @@ class Home extends Component {
           go to user kitze
         </button>
 
+        <br/>
+        <br/>
+        <button onClick={() => goTo(views.userProfile, {username: 'kitze', tab: 'articles'}, store)}>
+          go to user kitze
+        </button>
+
       </div>
     );
   }
