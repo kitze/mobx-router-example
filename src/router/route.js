@@ -1,23 +1,38 @@
 import _ from 'lodash';
+import {toJS} from 'mobx';
 import {mapAndFilter} from './utils';
 
 class Route {
 
+  //props
   id;
   component;
   path;
-  onEnter;
   title;
+  rootPath;
+
+  //lifecycle methods
+  onEnter;
+  onExit;
+  beforeEnter;
+  beforeExit;
 
   constructor(props) {
     _.each(props, (value, key) => this[key] = value);
+    this.rootPath = this.getRootPath();
   }
+
+  /*
+   Sets the root path for the current path, so it's easier to determine if the route entered/exited or just some params changed
+   Example: for '/' the root path is '/', for '/profile/:username/:tab' the root path is '/profile'
+   */
+  getRootPath = () => `/${this.path.split('/')[1]}`;
 
   /*
    replaces url params placeholders with params from an object
    Example: if url is /book/:id/page/:pageId and object is {id:100, pageId:200} it will return /book/100/page/200
    */
-  replaceUrlParams = params => _.reduce(params, (path, value, key) => this.path = path.replace(`:${key}`, value), this.path);
+  replaceUrlParams = params => _.reduce(params, (path, value, key) => path.replace(`:${key}`, value), this.path);
 
   /*
    converts an array of params [123, 100] to an object
