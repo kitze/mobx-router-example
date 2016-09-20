@@ -14,9 +14,15 @@ class Router {
   }
 
   goTo = action((view, paramsObj, store) => {
+
+    const rootViewChanged = !this.currentView || (this.currentView.rootPath !== view.rootPath);
+
+    rootViewChanged && this.currentView && this.currentView.onExit && this.currentView.onExit(this.currentView, this.params, store);
+
     this.currentView = view;
-    this.params = paramsObj;
-    view.onEnter && view.onEnter(view, toJS(paramsObj), store);
+    this.params = toJS(paramsObj);
+
+    rootViewChanged && view.onEnter && view.onEnter(view, this.params, store);
   });
 
 }

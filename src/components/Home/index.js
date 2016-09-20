@@ -30,6 +30,12 @@ class Home extends Component {
 
         <button onClick={() => goTo(views.book, {id: 250, page: 130}, store)}> go to book 250, page 130</button>
 
+        <br/>
+        <br/>
+        <button onClick={() => goTo(views.userProfile, {username: 'kitze', tab: 'articles'}, store)}>
+          go to user kitze
+        </button>
+
       </div>
     );
   }
