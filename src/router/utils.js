@@ -5,9 +5,7 @@ export const mapAndFilter = (array, condition, modification) => _.reduce(array, 
   return results;
 }, []);
 
-export const viewsForDirector = (views, store)=> {
-  return _.reduce(views, (obj, view) => {
-    obj[view.path] = (...paramsArr) => view.goTo(store, paramsArr);
-    return obj;
-  }, {});
-};
+export const viewsForDirector = (views, store) => _.reduce(views, (obj, view) => {
+  obj[view.path] = (...paramsArr) => view.goTo(store, paramsArr);
+  return obj;
+}, {});

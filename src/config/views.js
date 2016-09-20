@@ -11,33 +11,25 @@ import Book from '../components/Book';
 
 const views = {
   home: new Route({
-    id: 'home',
-    title: 'Home',
     path: '/',
     component: <Home/>
   }),
   gallery: new Route({
-    id: 'gallery',
-    title: 'Gallery',
     path: '/gallery',
     component: <Gallery/>
   }),
   document: new Route({
-    id: 'document',
-    title: 'Document',
     path: '/document/:id',
     component: <Document/>,
     onEnter: (route, params) => {
-      console.log(`entering ${route.title} with params`, params);
+      console.log(`entering document with params`, params);
     }
   }),
   book: new Route({
-    id: 'book',
-    title: 'Book',
     path: '/book/:id/page/:page',
     component: <Book/>,
     onEnter: (route, params, store) => {
-      console.log(`entering ${route.title} with params`, params);
+      console.log(`entering book with params`, params);
       store.app.setTitle(route.title);
     }
   })
