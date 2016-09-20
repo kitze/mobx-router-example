@@ -9,8 +9,8 @@ import Document from '../components/Document';
 import Gallery from '../components/Gallery';
 import Book from '../components/Book';
 import UserProfile from '../components/UserProfile';
-const views = {
 
+const views = {
   home: new Route({
     path: '/',
     component: <Home/>,
