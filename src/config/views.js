@@ -21,14 +21,14 @@ const views = {
     onEnter: () => {
       console.log('entering user profile!');
     },
-    onExit: () => {
+    beforeExit: () => {
       console.log('exiting user profile!');
     }
   }),
   gallery: new Route({
     path: '/gallery',
     component: <Gallery/>,
-    onExit: () => {
+    beforeExit: () => {
       const result = confirm('Are you sure you want to leave the gallery?');
       return result;
     }
@@ -36,6 +36,13 @@ const views = {
   document: new Route({
     path: '/document/:id',
     component: <Document/>,
+    beforeEnter: (route, params, store) => {
+      const userIsLoggedIn = store.app.user;
+      if (!userIsLoggedIn) {
+        alert('Only logged in users can enter this route!');
+        return false;
+      }
+    },
     onEnter: (route, params) => {
       console.log(`entering document with params`, params);
     }

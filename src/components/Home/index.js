@@ -16,15 +16,15 @@ class Home extends Component {
       <div className={css(styles.Home)}>
         <h3> Home </h3>
 
-        <button onClick={() => goTo(views.gallery)}> go to gallery</button>
+        <button onClick={() => goTo(views.gallery, {}, store)}> go to gallery</button>
         <br/>
         <br/>
 
-        <button onClick={() => goTo(views.document, {id: 123})}> go to document 123</button>
+        <button onClick={() => goTo(views.document, {id: 123}, store)}> go to document 123</button>
         <br/>
         <br/>
 
-        <button onClick={() => goTo(views.document, {id: 456})}> go to document 456</button>
+        <button onClick={() => goTo(views.document, {id: 456}, store)}> go to document 456</button>
         <br/>
         <br/>
 
