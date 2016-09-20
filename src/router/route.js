@@ -9,10 +9,18 @@ class Route {
   path;
   onEnter;
   title;
+  rootPath;
 
   constructor(props) {
     _.each(props, (value, key) => this[key] = value);
+    this.rootPath = this.getRootPath();
   }
+
+  /*
+   Sets the root path for the current path, so it's easier to determine if the route entered/exited or just some params changed
+   Example: for '/' the root path is '/', for '/profile/:username/:tab' the root path is '/profile'
+   */
+  getRootPath = () => `/${this.path.split('/')[1]}`;
 
   /*
    replaces url params placeholders with params from an object
