@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import {toJS} from 'mobx';
 import {mapAndFilter} from './utils';
 
 class Route {
@@ -17,7 +18,7 @@ class Route {
    replaces url params placeholders with params from an object
    Example: if url is /book/:id/page/:pageId and object is {id:100, pageId:200} it will return /book/100/page/200
    */
-  replaceUrlParams = params => _.reduce(params, (path, value, key) => this.path = path.replace(`:${key}`, value), this.path);
+  replaceUrlParams = params => _.reduce(params, (path, value, key) => path.replace(`:${key}`, value), this.path);
 
   /*
    converts an array of params [123, 100] to an object
