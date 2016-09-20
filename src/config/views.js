@@ -13,10 +13,7 @@ import UserProfile from '../components/UserProfile';
 const views = {
   home: new Route({
     path: '/',
-    component: <Home/>,
-    onExit: () => {
-      console.log('exiting home');
-    }
+    component: <Home/>
   }),
   userProfile: new Route({
     path: '/profile/:username/:tab',
@@ -30,7 +27,11 @@ const views = {
   }),
   gallery: new Route({
     path: '/gallery',
-    component: <Gallery/>
+    component: <Gallery/>,
+    onExit: () => {
+      const result = confirm('Are you sure you want to leave the gallery?');
+      return result;
+    }
   }),
   document: new Route({
     path: '/document/:id',

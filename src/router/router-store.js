@@ -16,8 +16,11 @@ class Router {
   goTo = action((view, paramsObj, store) => {
 
     const rootViewChanged = !this.currentView || (this.currentView.rootPath !== view.rootPath);
+    const onExitReturn = rootViewChanged && this.currentView && this.currentView.onExit && this.currentView.onExit(this.currentView, this.params, store);
 
-    rootViewChanged && this.currentView && this.currentView.onExit && this.currentView.onExit(this.currentView, this.params, store);
+    if (onExitReturn === false) {
+      return;
+    }
 
     this.currentView = view;
     this.params = toJS(paramsObj);
