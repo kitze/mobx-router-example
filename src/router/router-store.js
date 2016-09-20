@@ -17,12 +17,12 @@ class Router {
 
     const rootViewChanged = !this.currentView || (this.currentView.rootPath !== view.rootPath);
 
-    const beforeExitResult = rootViewChanged && this.currentView && this.currentView.beforeExit && this.currentView.beforeExit(this.currentView, this.params, store);
+    const beforeExitResult = (rootViewChanged && this.currentView && this.currentView.beforeExit) ? this.currentView.beforeExit(this.currentView, this.params, store) : true;
     if (beforeExitResult === false) {
       return;
     }
 
-    const beforeEnterResult = rootViewChanged && view.beforeEnter && view.beforeEnter(view, this.params, store);
+    const beforeEnterResult = (rootViewChanged && view.beforeEnter) ? view.beforeEnter(view, this.params, store) : true
     if (beforeEnterResult === false) {
       return;
     }
