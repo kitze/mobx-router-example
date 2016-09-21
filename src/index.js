@@ -4,10 +4,10 @@ import {MobxRouter, startRouter} from 'mobx-router';
 
 //mobx
 import {Provider} from 'mobx-react';
-import store from './mobx/store';
+import store from 'mobx/store';
 
 //router
-import views from './config/views';
+import views from 'config/views';
 startRouter(views, store);
 
 ReactDOM.render(
