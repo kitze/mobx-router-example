@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
-import {Link} from '../../router';
-import views from '../../config/views';
+import {Link} from 'router';
+import views from 'config/views';
 
 //style
 import {css} from 'aphrodite';
@@ -28,7 +28,7 @@ class Home extends Component {
         <br/>
 
         <Link view={views.document} removeStyle={true} params={{id: 999}} store={store}>
-          <div>
+          <div style={{display: 'inline-block'}}>
             Go to document <b> 999 </b>
           </div>
         </Link>

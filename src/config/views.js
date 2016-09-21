@@ -1,14 +1,14 @@
 import React from 'react';
 
 //models
-import {Route} from '../router';
+import {Route} from 'router';
 
 //components
-import Home from '../components/Home';
-import Document from '../components/Document';
-import Gallery from '../components/Gallery';
-import Book from '../components/Book';
-import UserProfile from '../components/UserProfile';
+import Home from 'components/Home';
+import Document from 'components/Document';
+import Gallery from 'components/Gallery';
+import Book from 'components/Book';
+import UserProfile from 'components/UserProfile';
 
 const views = {
   home: new Route({

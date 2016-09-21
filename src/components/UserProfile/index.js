@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import _ from 'lodash';
 import {observer} from 'mobx-react';
-import views from '../../config/views';
+import views from 'config/views';
 
 //style
 import {css} from 'aphrodite';
