@@ -1,11 +1,7 @@
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
-import {Link} from 'router';
+import {Link} from 'mobx-router';
 import views from 'config/views';
-
-//style
-import {css} from 'aphrodite';
-import styles from './styles';
 
 class Home extends Component {
   render() {
@@ -14,7 +10,7 @@ class Home extends Component {
     const {router: {goTo}} = store;
 
     return (
-      <div className={css(styles.Home)}>
+      <div>
         <h3> Home </h3>
 
         <Link view={views.gallery} store={store}> Go to gallery </Link>

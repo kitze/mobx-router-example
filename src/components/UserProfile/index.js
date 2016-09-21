@@ -3,10 +3,6 @@ import _ from 'lodash';
 import {observer} from 'mobx-react';
 import views from 'config/views';
 
-//style
-import {css} from 'aphrodite';
-import styles from './styles';
-
 class UserProfile extends Component {
   render() {
 
@@ -29,7 +25,7 @@ class UserProfile extends Component {
     ];
 
     return (
-      <div className={css(styles.UserProfile)}>
+      <div>
 
         <h1> User profile </h1>
 

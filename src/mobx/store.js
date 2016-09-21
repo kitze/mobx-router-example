@@ -1,5 +1,5 @@
 import AppStore from 'mobx/stores/app-store';
-import {RouterStore} from 'router';
+import {RouterStore} from 'mobx-router';
 
 const store = {
   app: new AppStore(),

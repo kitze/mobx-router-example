@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MobxRouter from './router/MobxRouter';
+import {MobxRouter, startRouter} from 'mobx-router';
 
 //mobx
 import {Provider} from 'mobx-react';
@@ -8,7 +8,6 @@ import store from './mobx/store';
 
 //router
 import views from './config/views';
-import {startRouter} from './router';
 startRouter(views, store);
 
 ReactDOM.render(
