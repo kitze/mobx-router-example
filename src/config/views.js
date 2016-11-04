@@ -55,7 +55,7 @@ const views = {
     component: <Book/>,
     onEnter: (route, params, store) => {
       console.log(`entering book with params`, params);
-      store.app.setTitle(route.title);
+      store.app.setTitle(`Book ${params.id}, page ${params.page}`);
     }
   })
 };

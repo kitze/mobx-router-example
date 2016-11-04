@@ -4,13 +4,17 @@ class AppStore {
   constructor() {
     extendObservable(this, {
       title: 'MobX Router Tutorial',
-      user: undefined
+      user: undefined,
     });
   }
 
   setTitle = action(title => {
     this.title = title;
   });
+
+  setUser = action(user => {
+    this.user = user;
+  })
 }
 
 export default AppStore;
