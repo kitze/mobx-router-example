@@ -2,20 +2,20 @@
   "name": "mobx-router-example",
   "version": "0.1.0",
   "devDependencies": {
-    "react-scripts": "0.4.3"
+    "react-scripts": "0.5.1"
   },
   "dependencies": {
     "director": "^1.2.8",
     "lodash": "^4.16.0",
     "mobx": "^2.5.1",
     "mobx-react": "^3.5.6",
-    "mobx-router": "git+https://github.com/kitze/mobx-router.git",
+    "mobx-router": "0.0.4",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },
   "scripts": {
-    "start": "NODE_PATH=./src react-scripts start",
-    "build": "NODE_PATH=./src react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "deploy": "surge build/ mobx-router-example.surge.sh",

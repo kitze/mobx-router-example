@@ -27,7 +27,21 @@ class UserProfile extends Component {
     return (
       <div>
 
-        <h1> User profile </h1>
+        <h1> User profile for: {params.username} </h1>
+
+        <h3> Friends: </h3>
+        <ul>
+          <li>
+            <button onClick={() => goTo(views.userProfile, {...params, username: 'kristijan'}, store)}>
+              Kristijan Ristovski
+            </button>
+          </li>
+          <li>
+            <button onClick={() => goTo(views.userProfile, {...params, username: 'john'}, store)}>
+              John Doe
+            </button>
+          </li>
+        </ul>
 
         <h3>Tabs:</h3>
 
