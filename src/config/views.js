@@ -34,6 +34,9 @@ const views = {
     beforeExit: () => {
       const result = confirm('Are you sure you want to leave the gallery?');
       return result;
+    },
+    onEnter: (route, params, store, queryParams)=> {
+      console.log('queryParams', queryParams);
     }
   }),
   document: new Route({

@@ -17,6 +17,12 @@ class Home extends Component {
 
         <br/>
         <br/>
+        <Link view={views.gallery} store={store} queryParams={{start: 5}}>
+          Go to gallery and start from 5th image
+        </Link>
+
+        <br/>
+        <br/>
 
         <Link view={views.document} params={{id: 456}} title="Go to document 456" store={store}/>
 
