@@ -29,7 +29,7 @@ class Home extends Component {
         <br/>
         <br/>
 
-        <Link view={views.document} removeStyle={true} params={{id: 999}} store={store}>
+        <Link view={views.document} params={{id: 999}} store={store}>
           <div style={{display: 'inline-block'}}>
             Go to document <b> 999 </b>
           </div>
