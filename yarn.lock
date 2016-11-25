@@ -3489,9 +3489,9 @@ mobx-react@3.5.6:
   dependencies:
     hoist-non-react-statics "^1.2.0"
 
-mobx-router@0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/mobx-router/-/mobx-router-0.0.6.tgz#2ef8edb7894abf31b0227373b2f913f23f96c6d9"
+mobx-router@0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/mobx-router/-/mobx-router-0.0.7.tgz#5a99e8c86418e36e668fa4fc3c508c41c38dc7cb"
   dependencies:
     babel-runtime "^6.11.6"
     director "1.2.8"
