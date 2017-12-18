@@ -32,7 +32,7 @@ const views = {
     path: '/gallery',
     component: <Gallery/>,
     beforeExit: () => {
-      const result = confirm('Are you sure you want to leave the gallery?');
+      const result = window.confirm('Are you sure you want to leave the gallery?');
       return result;
     },
     onEnter: (route, params, store, queryParams)=> {

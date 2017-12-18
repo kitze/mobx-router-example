@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import _ from 'lodash';
-import {observer} from 'mobx-react';
+import {inject, observer} from 'mobx-react';
 import views from 'config/views';
 
 class UserProfile extends Component {
@@ -85,4 +85,4 @@ class UserProfile extends Component {
   }
 }
 
-export default observer(['store'], UserProfile);
+export default inject('store')(observer(UserProfile));

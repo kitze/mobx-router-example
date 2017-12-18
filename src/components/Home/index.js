@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {observer} from 'mobx-react';
+import {inject, observer} from 'mobx-react';
 import {Link} from 'mobx-router';
 import views from 'config/views';
 
@@ -57,4 +57,5 @@ class Home extends Component {
   }
 }
 
-export default observer(['store'], Home);
+export default inject('store')(observer(Home));
+

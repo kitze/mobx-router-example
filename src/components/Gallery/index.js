@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {observer} from 'mobx-react';
+import {inject, observer} from 'mobx-react';
 import _ from 'lodash';
 
 class Gallery extends Component {
@@ -19,4 +19,4 @@ class Gallery extends Component {
   }
 }
 
-export default observer(['store'], Gallery);
+export default inject('store')(observer(Gallery));

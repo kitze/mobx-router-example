@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {observer} from 'mobx-react';
+import {inject, observer} from 'mobx-react';
 
 class Book extends Component {
   render() {
@@ -15,4 +15,4 @@ class Book extends Component {
   }
 }
 
-export default observer(['store'], Book);
+export default inject('store')(observer(Book));

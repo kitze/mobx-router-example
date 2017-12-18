@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {observer} from 'mobx-react';
+import {inject, observer} from 'mobx-react';
 
 //style
 class Document extends Component {
@@ -17,4 +17,5 @@ class Document extends Component {
   }
 }
 
-export default observer(['store'], Document);
+export default inject('store')(observer(Document));
+
