@@ -2,7 +2,7 @@
   "name": "mobx-router-example",
   "version": "0.1.0",
   "devDependencies": {
-    "react-scripts": "^1.0.17"
+    "react-scripts": "^5.0.1"
   },
   "dependencies": {
     "director": "1.2.8",
